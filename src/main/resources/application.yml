@@ -1,0 +1,54 @@
+#------------------------------------------全局变量------------------------------------------
+redisKeys:
+  #药店地图存储 key值
+  geoDrugstore: drugstores
+#当前文件地址
+LocalAddress: D:/work/One-stopMedicalService/One-stopMedicalService-server/src/main/
+network_localhost: http://172.18.7.15:8081/
+#-----------------------------------------spring--------------------------------------------
+spring:
+  #swagger3 配置
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+  #datasource 数据库
+  datasource:
+    url: jdbc:mysql://8.130.37.22:3306/medicaladvice?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #redis 配置
+  redis:
+    #主机号
+    host: 8.130.37.22
+    #端口
+    port: 6379
+    #默认数据库
+    database: 0
+    jedis:
+      pool:
+        max-active: 50
+        max-wait: 3000
+        max-idle: 20
+        min-idle: 2
+    connect-timeout: 5000
+  #循环依赖默认禁止
+  main:
+    allow-circular-references: true
+
+#-------------------------------------------服务器端口-------------------------------------------
+server:
+  port: 8081
+  address: ${address:0.0.0.0}
+
+#--------------------------------------------mybatis-plus---------------------------------------
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      # 1 代表已删除，不配置默认是1，也可修改配置
+      logic-delete-value: 1
+      # 0 代表未删除，不配置默认是0，也可修改配置
+      logic-not-delete-value: 0
+  #这个配置会将执行的sql打印出来
+  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
