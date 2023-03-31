@@ -1,4 +1,4 @@
 package com.example.onestopmedicalserviceserver.util;
 
-public class NIHao {
+public class WSG {
 }
