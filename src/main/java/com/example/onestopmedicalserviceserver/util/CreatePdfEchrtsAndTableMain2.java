@@ -25,7 +25,6 @@ import java.util.List;
 public class CreatePdfEchrtsAndTableMain2 {
     @Value("${LocalAddress}")
     String localAddress;
-
     public void createPdfFile(HttpServletResponse response, PrescriptionForm pf) throws IOException, DocumentException, TemplateException {
 
         //设置请求返回类型
@@ -75,7 +74,7 @@ public class CreatePdfEchrtsAndTableMain2 {
 
 
         //仿宋体+处方信息展示
-        BaseFont bfComic = BaseFont.createFont("c://windows//fonts//SIMFANG.TTF", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+        BaseFont bfComic = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
         addTextToPdfCenter(s, ps, pf.getInfos(), "context", bfComic);
 
         //图片编辑
@@ -83,7 +82,7 @@ public class CreatePdfEchrtsAndTableMain2 {
         //添加logo
         Rectangle logo = s.getFieldPositions("seal_af_image").get(0).position;
 
-        Image logoImage = Image.getInstance(localAddress + "resources/images/印章.png");
+        Image logoImage = Image.getInstance( "src/main/resources/static/image/印章.png");
         //根据域的大小缩放图片，我这里宽度在原有的域基础上加了100，你们可以自己调节
         logoImage.scaleToFit(logo.getWidth() + 100, logo.getHeight());
         logoImage.setAlignment(Image.MIDDLE);
@@ -135,10 +134,10 @@ public class CreatePdfEchrtsAndTableMain2 {
         //设置中文格式
         Font font = new Font(baseFont);
         for (PrescriptionInfo info : infos){
-            String text = "          "+info.getName()+"\n";
-            text = text +"          "+ "数量：  x"+info.getNum()+"\n";
-            text = text +"          "+ "规格：  " + info.getSpecifications()+"\n";
-            text = text +"          "+ "用法用量:  " + info.getUsageDosage();
+            String text ="           "+info.getName()+"\n";
+            text = text +"           "+ "数量：              x"+info.getNum()+"\n";
+            text = text +"           "+ "规格：              " + info.getSpecifications()+"\n";
+            text = text +"           "+ "用法用量:              " + info.getUsageDosage();
             //设置单元格格式
             PdfPCell cell = new PdfPCell(new Phrase(text, font));
             //设置单元格高度
