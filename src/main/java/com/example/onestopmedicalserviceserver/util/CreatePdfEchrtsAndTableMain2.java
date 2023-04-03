@@ -6,7 +6,6 @@ import com.example.onestopmedicalserviceserver.entry.prescription.PrescriptionFo
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import freemarker.template.TemplateException;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
