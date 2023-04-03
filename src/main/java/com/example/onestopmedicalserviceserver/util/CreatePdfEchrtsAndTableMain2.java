@@ -82,7 +82,7 @@ public class CreatePdfEchrtsAndTableMain2 {
         //添加logo
         Rectangle logo = s.getFieldPositions("seal_af_image").get(0).position;
 
-        Image logoImage = Image.getInstance( "src/main/resources/static/image/印章.png");
+        Image logoImage = Image.getInstance( "src/main/resources/images/image/印章.png");
         //根据域的大小缩放图片，我这里宽度在原有的域基础上加了100，你们可以自己调节
         logoImage.scaleToFit(logo.getWidth() + 100, logo.getHeight());
         logoImage.setAlignment(Image.MIDDLE);
