@@ -23,7 +23,8 @@ import java.util.List;
  */
 @Component
 public class CreatePdfEchrtsAndTableMain2 {
-
+    @Value("${LocalAddress}")
+    String localAddress;
     public void createPdfFile(HttpServletResponse response, PrescriptionForm pf) throws IOException, DocumentException, TemplateException {
 
         //设置请求返回类型
@@ -53,6 +54,7 @@ public class CreatePdfEchrtsAndTableMain2 {
         s.setField("hospital", pf.getHospital());
 
         //编号
+        BaseFont fontByID = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
         s.setField("id", pf.getId());
         //开具时间
         s.setField("time", pf.getCreateTime());
