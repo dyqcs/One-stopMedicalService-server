@@ -7,6 +7,10 @@ LocalAddress: D:/work/One-stopMedicalService/One-stopMedicalService-server/src/m
 network_localhost: http://172.18.7.15:8081/
 #-----------------------------------------spring--------------------------------------------
 spring:
+  # 时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss # 时间戳统一格式
+    time-zone: GMT+8 # 时区修改
   #swagger3 配置
   mvc:
     path match:
