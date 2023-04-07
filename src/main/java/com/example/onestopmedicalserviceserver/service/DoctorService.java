@@ -12,5 +12,7 @@ public interface DoctorService {
     List<Doctor> selectListByName(String name);
     List<DoctorInfo> selectListBySmallDepartmentId(Integer smallDepartmentId);
     DoctorInfo selectOneByIdToDoctorInfo(Integer id);
-
+    int deleteById(int id);
+    int insertOne(Doctor doctor);
+    int update(Doctor doctor);
 }

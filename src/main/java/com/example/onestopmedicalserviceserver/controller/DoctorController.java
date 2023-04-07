@@ -1,12 +1,11 @@
 package com.example.onestopmedicalserviceserver.controller;
 
+import com.example.onestopmedicalserviceserver.domain.Doctor;
 import com.example.onestopmedicalserviceserver.service.DoctorService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Api(tags="医生信息")
 @RestController
@@ -51,4 +50,21 @@ public class DoctorController {
         return new Result(Code.GET_OK,doctorService.selectListByName(name));
     }
 
+    @ApiOperation("插入一个医生")
+    @PostMapping("insertOne")
+    public Result insertOne(@RequestBody Doctor doctor){
+        return new Result(Code.GET_OK,doctorService.insertOne(doctor),"");
+    }
+
+    @ApiOperation("根据医生id删除医生信息")
+    @GetMapping("insertOne")
+    public Result insertOne(int id){
+        return new Result(Code.GET_OK,doctorService.deleteById(id),"");
+    }
+
+    @ApiOperation("根据医生id修改医生信息")
+    @GetMapping("update")
+    public Result update(@RequestBody Doctor doctor){
+        return new Result(Code.GET_OK,doctorService.update(doctor),"");
+    }
 }

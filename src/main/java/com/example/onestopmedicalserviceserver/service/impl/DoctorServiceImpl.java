@@ -80,4 +80,21 @@ public class DoctorServiceImpl implements DoctorService {
         doctorInfo.setSmallDepartment(smallDepartService.selectOneByDoctorId(id));
         return doctorInfo;
     }
+
+    @Override
+    public int deleteById(int id) {
+        return doctorDao.deleteById(id);
+    }
+
+    @Override
+    public int insertOne(Doctor doctor) {
+        return doctorDao.insert(doctor);
+    }
+
+    @Override
+    public int update(Doctor doctor) {
+        LambdaQueryWrapper<Doctor> lqw = new LambdaQueryWrapper<>();
+        lqw.eq(Doctor::getId,doctor.getId());
+        return doctorDao.update(doctor,lqw);
+    }
 }
