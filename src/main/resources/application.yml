@@ -24,7 +24,7 @@ spring:
   #redis 配置
   redis:
     #主机号
-    host: 8.130.37.22
+    host: localhost
     #端口
     port: 6379
     #默认数据库
