@@ -1,7 +1,7 @@
 package com.example.onestopmedicalserviceserver.init;
 
-import com.example.onestopmedicalserviceserver.domain.Drugstore;
-import com.example.onestopmedicalserviceserver.service.DrugstoreService;
+import com.example.onestopmedicalserviceserver.drugRelated.domain.Drugstore;
+import com.example.onestopmedicalserviceserver.drugRelated.service.DrugstoreService;
 import com.example.onestopmedicalserviceserver.util.GeoHashUtil;
 import com.example.onestopmedicalserviceserver.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;

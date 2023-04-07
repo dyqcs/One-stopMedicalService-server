@@ -2,6 +2,8 @@ package com.example.onestopmedicalserviceserver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.*;
 import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.service.*;
@@ -17,7 +19,8 @@ public class Swagger3Config {
         return new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo())
                 .select()
-                .apis( RequestHandlerSelectors.basePackage("com.example.onestopmedicalserviceserver.controller"))
+                .apis( RequestHandlerSelectors
+                        .withClassAnnotation(RestController.class))
                 .paths(PathSelectors.any())
                 .build();
     }
