@@ -17,9 +17,9 @@ spring:
       matching-strategy: ant_path_matcher
   #datasource 数据库
   datasource:
-    url: jdbc:mysql://8.130.37.22:3306/medicaladvice?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/medicaladvice?useUnicode=true&characterEncoding=utf8
     username: root
-    password: root
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   #redis 配置
   redis:

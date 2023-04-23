@@ -20,7 +20,7 @@ public class SmallDepartment {
     String name;
     @ApiModelProperty("大科室id")
     Integer majorDepartmentId;
-
+    String icon;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
