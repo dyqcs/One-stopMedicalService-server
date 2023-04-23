@@ -8,4 +8,5 @@ public class OneStopMedicalServiceServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(OneStopMedicalServiceServerApplication.class, args);
     }
+
 }

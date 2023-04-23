@@ -1,0 +1,1 @@
+import{V as e}from"./VideoBody-3642adfb.js";import{o as t,b as a,a as s}from"./index-ef76deaf.js";const c={class:"center",style:{width:"450px",height:"650px"}},m={__name:"Cart",setup(r){const o={avatar:'"Leo_yooo"',nickName:""};return(n,_)=>(t(),a("div",c,[s(e,{"choose-info":o})]))}};export{m as default};
